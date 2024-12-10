@@ -19,6 +19,7 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 # PROGRAM
+```
 models.py:
 
 from django.db import models
@@ -38,6 +39,7 @@ admin.py:
 from django.contrib import admin
 from .models import Electricity_Bill, Electricity_BillAdmin
 admin.site.register(Electricity_Bill, Electricity_BillAdmin)
+```
 
 # OUTPUT
 
