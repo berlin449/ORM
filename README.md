@@ -30,9 +30,9 @@ from django.db import models
 from django.contrib import admin
 
 class Car(models.Model):
-    car_name = models.CharField(max_length=100)        # Car name/model
-    brand = models.CharField(max_length=100)           # Brand of the car
-    year = models.IntegerField()                       # Manufacturing year
+    car_name = models.CharField(max_length=100)  
+    brand = models.CharField(max_length=100)           
+    year = models.IntegerField()                       
     price = models.DecimalField(max_digits=10, decimal_places=2)    
     speed=models.IntegerField()
 
@@ -45,7 +45,7 @@ class CarAdmin(admin.ModelAdmin):
 ```
 
 # OUTPUT
-<img width="1914" height="1018" alt="Screenshot 2025-09-22 201015" src="https://github.com/user-attachments/assets/aa169f89-340c-41fe-9140-0e00cc4947cc" />
+<img width="1911" height="793" alt="Screenshot 2025-09-23 131627" src="https://github.com/user-attachments/assets/999f49a8-80a6-4964-aeb2-d03c41e26c8c" />
 
 
 
