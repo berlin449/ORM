@@ -21,8 +21,8 @@ Execute Django admin and create details for 10 books
 admin.py
 ```
 from django.contrib import admin
-from .models import Student, StudentAdmin
-admin.site.register(Student,StudentAdmin)
+from .models import Car,CarAdmin
+admin.site.register(Car,CarAdmin)
 ```
 model.py
 ```
@@ -33,22 +33,21 @@ class Car(models.Model):
     car_name = models.CharField(max_length=100)        # Car name/model
     brand = models.CharField(max_length=100)           # Brand of the car
     year = models.IntegerField()                       # Manufacturing year
-    price = models.DecimalField(max_digits=10, decimal_places=2)  # Price
-    registration_number = models.CharField(max_length=50, unique=True)  # Unique car number
+    price = models.DecimalField(max_digits=10, decimal_places=2)    
+    speed=models.IntegerField()
 
-    def __str__(self):
-        return f"{self.brand} {self.car_name} ({self.year})"
 
 
 class CarAdmin(admin.ModelAdmin):
-    list_display = ('car_name', 'brand', 'year', 'price', 'registration_number')
-
+    list_display = ('car_name', 'brand', 'year', 'price','speed')
 
 
 ```
 
 # OUTPUT
-![alt text](<Screenshot 2025-09-22 201015.png>)
+<img width="1914" height="1018" alt="Screenshot 2025-09-22 201015" src="https://github.com/user-attachments/assets/aa169f89-340c-41fe-9140-0e00cc4947cc" />
+
+
 
 # RESULT
 Thus the program for creating a database using ORM hass been executed successfully
