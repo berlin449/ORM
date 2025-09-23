@@ -29,15 +29,20 @@ model.py
 from django.db import models
 from django.contrib import admin
 
-class Student(models.Model):
-    name = models.CharField(max_length=100)      # student name
-    roll_no = models.IntegerField(unique=True)   # roll number
-    age = models.IntegerField()                  # age
-    email = models.EmailField(unique=True)       # email
-    date_of_birth = models.DateField()           # date of birth
+class Car(models.Model):
+    car_name = models.CharField(max_length=100)        # Car name/model
+    brand = models.CharField(max_length=100)           # Brand of the car
+    year = models.IntegerField()                       # Manufacturing year
+    price = models.DecimalField(max_digits=10, decimal_places=2)  # Price
+    registration_number = models.CharField(max_length=50, unique=True)  # Unique car number
 
-class StudentAdmin(admin.ModelAdmin):
-        list_display=('name','roll_no','age','email','date_of_birth')
+    def __str__(self):
+        return f"{self.brand} {self.car_name} ({self.year})"
+
+
+class CarAdmin(admin.ModelAdmin):
+    list_display = ('car_name', 'brand', 'year', 'price', 'registration_number')
+
 
 
 ```
